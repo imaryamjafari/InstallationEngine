@@ -18,17 +18,17 @@ The installation process supports dependency management, rollback on failure, an
 
 Create components
   
-Create a module:
+- Create a module:
 
-MODULE <id> <title>
+MODULE <component_id> <title>
 
 Example:
 
 MODULE M1 Database
 
-Create a package:
+- Create a package:
 
-PACKAGE <id> <title>
+PACKAGE <component_id> <title>
 
 Example:
 
@@ -38,7 +38,7 @@ PACKAGE P1 Backend
 
  Define Dependencies
 
-Add a component to a package:
+- Add a component to a package:
 
 ATTACH <package_id> <component_id>
 
@@ -52,9 +52,9 @@ A package may contain both modules and other packages.
 
 Install
 
-Install a component:
+- Install a component:
 
-INSTALL <id>
+INSTALL <component_id>
 
 If the target is a package, all of its dependencies are installed recursively.
 
@@ -62,9 +62,9 @@ If any dependency fails, the installation is rolled back according to the projec
 
 ---
 
-Uninstall One Component
+- Uninstall One Component
   
-UNINSTALL <id>
+UNINSTALL <component_id>
 
 Removes the specified component.
 
@@ -72,7 +72,7 @@ Dependencies that are no longer required by any installed package are also remov
 
 ---
 
-Uninstall Everything
+- Uninstall Everything
 
 UNINSTALL -A
 
@@ -80,9 +80,9 @@ Uninstalls all installed components and returns the system to its initial state.
 
 ---
 
-Simulate Failure
+- Simulate Failure
 
-MOCK_FAIL <id>
+- MOCK_FAIL <component_id>
 
 Marks a component as a mocked failure component.
 
@@ -98,9 +98,9 @@ If "P1" depends on "M1", installation fails when "M1" is processed.
 
 ---
 
- Recover a Failed Component
+ - Recover a Failed Component
   
-RESOLVE <id>
+RESOLVE <component_id>
 
 Removes the mocked failure flag from a component.
 
@@ -109,7 +109,7 @@ The component can then be installed normally again.
 Example:
 
 FAIL M1
-RECOVER M1
+RESOLVE M1
 INSTALL M1
 
 ----------------------------------------------------------------
