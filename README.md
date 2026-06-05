@@ -82,7 +82,7 @@ Uninstalls all installed components and returns the system to its initial state.
 
 - Simulate Failure
 
-- MOCK_FAIL <component_id>
+  MOCK_FAIL <component_id>
 
 Marks a component as a mocked failure component.
 
