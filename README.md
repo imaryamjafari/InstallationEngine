@@ -1,4 +1,4 @@
-# InstallationEngine
+# Installation Engine
 Simulation of an Installation Manager for Packages and Modules in C++
 
 The system manages two types of components:
