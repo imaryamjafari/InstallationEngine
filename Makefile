@@ -1,6 +1,6 @@
 CXX := g++
 CXXFLAGS := -std=c++17 -O2 -Wall -Wextra -Wpedantic -Iinclude
-SRC := $(wildcard src/*.cpp)
+SRC := $(wildcard *.cpp)
 TARGET := installer
 
 all: $(TARGET)
